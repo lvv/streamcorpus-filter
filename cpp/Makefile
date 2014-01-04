@@ -186,7 +186,7 @@ $(filternames_thrift_o):   filternames_types.h
 filter.o scf2mmap.o:  filternames_types.h  $(STREAMCORPUS)/cpp/libstreamcorpus.a 
 
 
-###########################################  make names mmap
+###########################################  SCF2MMAP
 
 scf2mmap:         scf2mmap.o		$(filternames_thrift_o) 
 
@@ -196,7 +196,7 @@ data/names.mmap: scf2mmap
 
 ##########################################  MISC
 clean:
-	$(RM)  *.o  $(filtername_thrift_cpp) *.gch  mk_mmap_names test_throughput_speed
+	$(RM)  *.o  $(filtername_thrift_cpp) *.gch  scf2mmap test_throughput_speed
 	$(RM)  gmon.out  *.prof  *.prof.png
 	$(RM)  *-multifast *-naive *-vsearch
 
