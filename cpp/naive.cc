@@ -27,7 +27,7 @@ struct  names_t::names_impl {
 	bool find_next   (pos_t& match_b, pos_t& match_e) {
 		for (; p <= e;  ++p)  {
 			for(size_t i=0;  i<B.size();  ++i) {
-				if ((E[i] - B[i]  < e-p)  &&  std::equal(B[i], E[i], p)) {
+				if ((E[i] - B[i]  <= e-p)  &&  std::equal(B[i], E[i], p)) {
 					match_b = p;
 					match_e = p + (E[i] - B[i]);
 					p = match_e;
